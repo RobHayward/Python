@@ -1,6 +1,7 @@
 \documentclass{hitec}
 
 \begin{document}
+
 List of functions. 
 \begin{itemize}
 \item def print_one(arg1, arg2):
