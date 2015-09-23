@@ -1,0 +1,16 @@
+\documentclass{hitec}
+
+\begin{document}
+List of functions. 
+\begin{itemize}
+\item def print_one(arg1, arg2):
+  print "arg1: %r, arg2: %r % (arg1, arg2)
+print_one("Zed", "Shaw")
+\item 
+\end{itemize}
+
+Modules or libraries are imported into python.  In exercise 13 these are imported from the system. 
+
+The int()
+
+\end{document}

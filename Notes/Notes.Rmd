@@ -1,0 +1,21 @@
+---
+title: "Python"
+author: "Rob Hayward"
+date: "10 September 2015"
+output: html_document
+---
+These are notes about python. 
+
+This comes from the [video](https://www.packtpub.com/packtlib/video/Big-Data-and-Business-Intelligence/9781783988969/5109/5285/)
+
+Currently on video 1.3
+
+## The command line
+From windows start write cmd
+
+From the prompt, help can be found by typing "help". 
+
+Now up to video 
+
+
+
