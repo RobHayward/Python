@@ -1,0 +1,16 @@
+---
+title: "Udemy"
+author: "Rob Hayward"
+date: "10 October 2015"
+output: html_document
+---
+
+# Section 1: Introduction
+Use LX terminal for command line. 
+
+1. sudo privides super-user priviledges. 
+2. "apt-get" will install from the internet.  
+3. "apt-get update" will update all the current packages over the internet. 
+4. Negative indexing in python starts from the other end.
+5. Indexing starts from zero. 
+6. Subsets a:b start from a and run up to (but do not include) b

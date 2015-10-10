@@ -4,7 +4,7 @@ def break_words(stuff):
 	return words
 
 def sort_words(words):
-	"""Sorts the ords."""
+	"""Sorts the words."""
 	return sorted(words)
 
 def print_first_word(words):
@@ -28,7 +28,7 @@ def print_first_and_last(sentence):
 	print_first_word(words)
 	print_last_word(words)
 
-def print_first_and_lst_sorted(sentence):
+def print_first_and_last_sorted(sentence):
 	"""Sorts the words and tten prints the irst and last one."""
 	words = sort_sentence(sentence)
 	print_first_word(words)
