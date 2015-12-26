@@ -4,10 +4,10 @@ Date = raw_input()
 print "Time?", 
 Time = raw_input()
 print "Programme?",
-Programme = raw_input()
+Programme = int(raw_input())
 print "Calories?",
-Calories = raw_input()
+Calories = float(raw_input())
 print "Time taken?", 
-Time_taken = raw_input()
+Time_taken = float(raw_input())
 
-print "Date, %r, Time, %r, Programme, %r, Calories, %r, Time_taken, %r" % (Date, Time, Programme, Calories, Time_taken)
+print "Date, %r, Time, %r, Programme, %r, Calories, %r, Time_taken, %r, Calories per minute %r" % (Date, Time, Programme, Calories, Time_taken, Calories/Time_taken)
