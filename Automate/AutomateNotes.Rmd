@@ -1,0 +1,124 @@
+---
+title: "Automate"
+author: "Rob Hayward"
+date: "26 December 2015"
+output: html_document
+---
+
+#Introduction
+
+There are two methods
+
+* Interactive shell 
+* Text editor
+
+There are different classes
+
+* interger
+* floating points
+* strings
+
+There are 
+
+* Statements
+* Expressions (evaluates)
+
+Objects can be switched from one class to another. For example, 
+
+* str(26)
+* int(124)
+* float(1)
+
+##Boolean operators
+
+Operator|Evaluates to
+--------|------
+True and True| True
+True and False| False
+False and True| False
+False and False| False
+
+Operator|Evaluates to 
+--------|-----------
+True or True|True
+True or False|True
+False or True|True
+False or False|False
+
+Operator|Evaluates to 
+------|------
+Not True|False
+Not False|True
+
+## Control statements
+Programmes can be evaluated at [Python Tutor](https://pythontutor.com/visualize.html). Blocks of code are determined by indentation.  
+
+Order of the `if...elif` statements is important.  The first true will be activated. The values 0, 0.0 and the empty string are considered falsy values. You can check with `bool()`.
+
+If there is an infinite loop, CNTR-C will end. `break` can also be used to break the programme. `continue`  can also be used within a loop. 
+
+`range` is an object that will run from first to last number.  For example, `range(2, 4)` will run from 2 to 4.  Third argument would be the step function. 
+
+#Functions
+Each python instillation comes with a group of modules or built in functions. For example, the `math` module has math functions and the `rand` module has functions for random variables. `import`  will import the module. 
+
+```
+import(rand)
+random.randint(0, 1)
+```
+
+If you type, 
+```
+from rand import *
+```
+
+This will import all the functions from the random module. Now it is not necessary to type rand. before the function.  There are mdules with the standard library but also third party libraries.  These are imported with `pip`. 
+
+## Writing own functions
+`def` is used to define a function. 
+
+```
+def hello():
+    print('Howdy')
+    print('Howdy!!')
+    print('Howdy!!!')
+
+hello()
+hello()
+hello()
+```
+
+Functions aim to remove the need to duplicate. 
+
+* The function will take *arguments* that are specified by the user. They are called *parameters* when they are given in the function. Function calls can be part of expressions because they evaluate to a value returned by the function call. When creating a fucntion with the `def` statement, you can specify what should be returned with the `return` statement. 
+
+`None` is a special value returned by print.  It is a lack of a value. Every function has a return value. `key word arguments` can be added to functions to change the behaviour. 
+
+Variales inside a function can have the same name as a variable outside a function.  
+
+* Global scope: available throughout
+* Local scope: available in the function
+
+These scopes are containers of variables.  Variables that are either *global* or *local*.  The global is created when the program starts and is destroyed when it is clsoed; the local is created when a function is called and destroyed when it is returned.
+
+Local variables cannot be used in the global scope. However, local variable can use global variables.  Python will assume that the variable is local so long as it is assigned.  If you want Python to take the global variable after the name has been assigned in a function, it is necessary to use  `global xxxxx `. 
+
+The benefit of having global and local variables is that it separates fucntions from the rest of the code. If something goes wrong in the function, it is confined to the function. 
+
+##Handling errors
+To stop programe ending on an error, it is possible to use `try` and `except`.  This will continue in the case of an error being thrown.  See example in `error.py`
+
+### Input validation
+```
+print('How many cats do you have?')
+numCats = input()
+try:
+  if int(numCats) >= 4:
+    print('That is a lot of cats')
+  else: 
+    print('That is not that many cats.')
+except ValueError:
+  print('You did not enter a number')
+```
+
+Input is validated as a number.   
