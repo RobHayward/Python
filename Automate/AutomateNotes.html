@@ -206,6 +206,74 @@ hello()</code></pre>
 <p>Local variables cannot be used in the global scope. However, local variable can use global variables. Python will assume that the variable is local so long as it is assigned. If you want Python to take the global variable after the name has been assigned in a function, it is necessary to use <code>global xxxxx</code>.</p>
 <p>The benefit of having global and local variables is that it separates fucntions from the rest of the code. If something goes wrong in the function, it is confined to the function.</p>
 </div>
+<div id="handling-errors" class="section level2">
+<h2>Handling errors</h2>
+<p>To stop programe ending on an error, it is possible to use <code>try</code> and <code>except</code>. This will continue in the case of an error being thrown. See example in <code>error.py</code></p>
+<div id="input-validation" class="section level3">
+<h3>Input validation</h3>
+<pre><code>print('How many cats do you have?')
+numCats = input()
+try:
+  if int(numCats) &gt;= 4:
+    print('That is a lot of cats')
+  else: 
+    print('That is not that many cats.')
+except ValueError:
+  print('You did not enter a number')</code></pre>
+<p>Input is validated as a number.</p>
+</div>
+</div>
+</div>
+<div id="lists" class="section level1">
+<h1>Lists</h1>
+<p>Contains multiple values in an ordered sequence. It contains items. Individual items can be taken from the list with indexation <code>[]</code>. Also a <em>slice</em> of several values can be taken. <code>list</code> function will turn something like a string into a list. <code>in</code> function will determine whether an item is in list (returning a boolean). <code>not in</code> is the opposite.</p>
+<p>One good method is to use for loops and lists. For example,</p>
+<pre><code>supplies = ['pens', 'penciles', 'rubber', 'board']
+for i in range(len(supplies)):
+  print('index' + str(i) + 'in supplies is: ' + supplies[i])</code></pre>
+<p>This allows i to be the index number and the place in the supplies list.</p>
+<div id="multiple-assignment" class="section level3">
+<h3>Multiple Assignment</h3>
+<p>If there is a list <code>cat</code> with items <code>fat</code>, <code>orange</code> and <code>loud</code>. These can be assigned to other variables with</p>
+<pre><code>size, colour, disposition = cat</code></pre>
+<p>This can be used to perform <strong>swap variables</strong></p>
+</div>
+<div id="augmented-assignment-operators" class="section level3">
+<h3>Augmented Assignment Operators</h3>
+<pre><code>spam = 42
+spam = spam + 1
+spam</code></pre>
+<p>is the same as</p>
+<pre><code>spam += 1</code></pre>
+</div>
+</div>
+<div id="methods" class="section level1">
+<h1>Methods</h1>
+<p>This is the same as a function but it is called on a specific value. For example, <code>index</code> is a method that will find the index of a particular list. However, you have to call that method on the oject <code>listname.index</code>. Each data type has its own set of methods.</p>
+<p>To add new values to a lit use the <code>append()</code> and <code>insert()</code> methods. Methods only apply to a particular data type. <code>sort()</code> is a useful list method. Key words may change behaviour. For example, <code>reverse = TRUE</code> will change the behaviour of sort. Cannot sort strings and integers. AscII-betical sort will put capitals before lower case.</p>
+<p>A list can be seen as a single character string. Many of the functrions can be used. While strings can be index but they are immutable (cannot be changed). To change strings, there is a need to create a new string.</p>
+<p>Immutable objects (like lists) stand alone and the list themselves just contain references to the lsit. THerefore, if the list is assigned to another name and a change in made in the list under that name, the list referred to by the original name will also change. Therefore, if a list is used and changed inside a function, this will also change the global value. Immutable variables like strings and duples do not face this problem.</p>
+<p>A fundamental change can be made with a <code>deep copy</code>. This is in the book.</p>
+<div id="dictionaries" class="section level2">
+<h2>Dictionaries</h2>
+<p>Like lists dictionaries contain different data types but use something other than integer for index. They are called keys. A key-value pair.</p>
+<p>Three methods of getting information</p>
+<pre><code>list(eggs.keys())
+list(eggs.values())
+list(eggs.items())</code></pre>
+<p>It is usually best to test whether key exists before tryuing to return its value. this will prevent an error messagte.</p>
+<p>List of methods for dictionaries</p>
+<ul>
+<li><code>dictionary.get(&lt;what you want?, what to return if not there)</code></li>
+<li><code>setdefault()</code> this will set the key if it does not already exist.</li>
+</ul>
+</div>
+<div id="data-structures" class="section level2">
+<h2>Data structures</h2>
+<p>Dictionaries are good ways of managing data.</p>
+<p>Look at tic-tac-toe function,</p>
+<p><code>type</code> will determine object type.</p>
+</div>
 </div>
 
 

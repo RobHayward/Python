@@ -122,3 +122,68 @@ except ValueError:
 ```
 
 Input is validated as a number.   
+
+# Lists
+Contains multiple values in an ordered sequence. It contains items. Individual items can be taken from the list with indexation `[]`.  Also a *slice* of several values can be taken. `list` function will turn something like a string into a list.  `in` function will determine whether an item is in list (returning a boolean). `not in` is the opposite. 
+
+One good method is to use for loops and lists.  For example, 
+```
+supplies = ['pens', 'penciles', 'rubber', 'board']
+for i in range(len(supplies)):
+  print('index' + str(i) + 'in supplies is: ' + supplies[i])
+```
+
+This allows i to be the index number and the place in the supplies list. 
+
+###Multiple Assignment
+If there is a list `cat` with items `fat`, `orange` and `loud`.  These can be assigned to other variables with 
+```
+size, colour, disposition = cat
+```
+
+This can be used to perform **swap variables** 
+
+###Augmented Assignment Operators
+```
+spam = 42
+spam = spam + 1
+spam
+```
+
+is the same as 
+```
+spam += 1
+```
+# Methods
+This is the same as a function but it is called on a specific value. For example, `index` is a method that will find the index of a particular list.  However, you have to call that method on the oject `listname.index`.  Each data type has its own set of methods. 
+
+To add new values to a lit use the `append()` and `insert()` methods. Methods only apply to a particular data type. `sort()` is a useful list method. Key words may change behaviour. For example, `reverse = TRUE` will change the behaviour of sort. Cannot sort strings and integers.  AscII-betical sort will put capitals before lower case. 
+
+A list can be seen as a single character string.  Many of the functrions can be used.  While strings can be index but they are immutable (cannot be changed). To change strings, there is a need to create a new string.
+
+Immutable objects (like lists) stand alone and the list themselves just contain references to the lsit. THerefore, if the list is assigned to another name and a change in made in the list under that name, the list referred to by the original name will also change. Therefore, if a list is used and changed inside a function, this will also change the global value.   Immutable variables like strings and duples do not face this problem. 
+
+A fundamental change can be made with a `deep copy`.  This is in the book. 
+
+##Dictionaries
+Like lists dictionaries contain different data types but use something other than integer for index. They are called keys. A key-value pair. 
+
+Three methods of getting information
+```
+list(eggs.keys())
+list(eggs.values())
+list(eggs.items())
+```
+It is usually best to test whether key exists before tryuing to return its value. this will prevent an error messagte. 
+
+List of methods for dictionaries 
+
+* `dictionary.get(<what you want?, what to return if not there)`
+* `setdefault()` this will set the key if it does not already exist.
+
+## Data structures
+Dictionaries are good ways of managing data. 
+
+Look at tic-tac-toe function, 
+
+`type` will determine object type. 
