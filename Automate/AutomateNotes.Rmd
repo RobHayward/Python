@@ -187,3 +187,55 @@ Dictionaries are good ways of managing data.
 Look at tic-tac-toe function, 
 
 `type` will determine object type. 
+
+# Strngs
+Need double quote sometimes. 
+
+```
+"That is Alic's hat"
+```
+Escape characters allow the use of otherwise illegal characters. For example, 
+
+``` 'Say hi to Bob\'s mother' ``` 
+
+```print('Hello \nWhat is you name \nI\'m fine)```
+
+A *raw-string* will print all the characters as they are.  For example, 
+
+```r'This is Calva\'s cat' ```
+
+A multiline string can also be made with three (double) quotations. For example, 
+
+``` 
+"""Deal Alice
+Eve's cat has been arrested. """ 
+````
+## More strings
+
+There are a number of function
+
+Function| Use
+---|---
+x.lower() | changes x to lower case
+x.upper() | changes x to upper
+x.islower()| Checks if x is lower case
+x.isupper()| checks if x is upper case
+isalpha()| letters only
+isalnum()| letters and numbers only
+isdecimal()| Numbers only
+isspace()| Space only
+istitle()| titecase only
+.title()| Changes something to title
+join()| Will join strings together (join can be specificed)
+.split()| Splits a string
+ljust()| left justified (length of string and filling can be spefified)
+rjust()| right justified
+center()| Center
+strip()| Strip (white space, or specified)
+rstrip()| right strip (white space, or specified)
+lstrip()| left strip (white space, or specified)
+replace()| replace one string with another
+paperclip.copy()|copy to clipboard (need to install paperclip)
+paperclip.paste()| paste to the clipboard (need to install paperclip)
+
+
