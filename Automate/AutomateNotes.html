@@ -77,6 +77,10 @@ img {
 <li><a href="#string-formatting"><span class="toc-section-number">5.2</span> String formatting</a></li>
 </ul></li>
 <li><a href="#running-python-from-the-command-line"><span class="toc-section-number">6</span> Running python from the command line</a></li>
+<li><a href="#regular-expressions"><span class="toc-section-number">7</span> Regular expressions</a><ul>
+<li><a href="#further-regular-expressions"><span class="toc-section-number">7.1</span> Further regular expressions</a></li>
+<li><a href="#syntax-for-number-of-groups"><span class="toc-section-number">7.2</span> Syntax for number of groups</a></li>
+</ul></li>
 </ul>
 </div>
 
@@ -404,6 +408,38 @@ Eve's cat has been arrested. &quot;&quot;&quot; </code></pre>
 </div>
 <div id="running-python-from-the-command-line" class="section level1">
 <h1><span class="header-section-number">6</span> Running python from the command line</h1>
+<p>The first line of python programmes should be a <em>shebang</em> line.</p>
+<p>This is</p>
+<ul>
+<li><code>#! python 3</code> for windows</li>
+<li><code>#! /usr/bin/env python 3</code> for linux</li>
+</ul>
+<p>On windows press <code>windows key +R</code> to being up the <em>run dialog</em>. Type <code>cmd</code> to bring up the command prompt window.</p>
+<p><em>Batch files</em> or <em>Script file</em></p>
+<p>Environemnt variables are set from <em>advanced system settings</em> in the <em>control panel</em>. If the path to the folder with the batch file is specified, this will automatically search that folder for the file. This saves specifiying the whole path.</p>
+<p>Function arguments can be specified in the command line.</p>
+</div>
+<div id="regular-expressions" class="section level1">
+<h1><span class="header-section-number">7</span> Regular expressions</h1>
+<p>Allow you to specify a pattern of text. Use the re module.</p>
+<p>There area number of functions that can be used one the <code>re module</code> has been imported</p>
+<ul>
+<li><code>re-compile()</code> will creates a reex object</li>
+<li>Use raw strings <code>r'\d</code> so that the backslashes can be used</li>
+<li>Use `search() method to create a <em>matched object</em>.</li>
+<li><code>group()</code> for the matched string</li>
+<li><code>\d</code> is a numeric digit.</li>
+</ul>
+<div id="further-regular-expressions" class="section level2">
+<h2><span class="header-section-number">7.1</span> Further regular expressions</h2>
+<p>It is possible to group parts of the regular expession so that when the <em>match object</em> is returned in <code>mo.group</code>, these individual components can be extracted as (for example) <code>mo.group[1]</code></p>
+<p>Parenthese have a special meaning in regular expresssion - they mark out where the group begins and ends. If you want to find parentheses you have to use the backslash to begin.</p>
+<p><code>|</code> is the *pipe character. This can be used to match one of several expressions. For example, <code>batReg = re.compile(r'Bat(man|mobile|copter|bat)')</code></p>
+</div>
+<div id="syntax-for-number-of-groups" class="section level2">
+<h2><span class="header-section-number">7.2</span> Syntax for number of groups</h2>
+<p>The following are useful * <code>?</code> match the expression zero or one times (ie <code>Bat(wo)?man</code> will look for Batman or Batwoman as wo can appear or not) * <code>*</code> mean match zero or more times. <code>Bat(wo)*man</code> will find Batwowowowowman.<br />* <code>+</code> this must match at last once. Now <code>Bat(wo)+man</code> will not find Batman. * <code>{x}</code> will match exactly x times. * <code>{x, y}</code> at least x times at most y. Leaving off one of the values will be taken as either zero or infinity. * Python re do <em>greedy matches</em> or the longest match so for (3, 5) it will match the 5 if it is available. For a non-greedy match, use the <code>?</code> after like <code>{3, 5}?</code></p>
+</div>
 </div>
 
 

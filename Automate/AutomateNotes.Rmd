@@ -261,3 +261,33 @@ On windows press `windows key +R` to being up the *run dialog*. Type `cmd` to br
 Environemnt variables are set from *advanced system settings* in the *control panel*.  If the path to the folder with the batch file is specified, this will automatically search that folder for the file. This saves specifiying the whole path. 
 
 Function arguments can be specified in the command line. 
+
+#Regular expressions
+Allow you to specify a pattern of text. Use the re module. 
+
+There area number of functions that can be used one the `re module` has been imported
+
+* `re-compile()` will creates a reex object
+* Use raw strings `r'\d` so that the backslashes can be used
+* Use `search() method to create a *matched object*.
+* `group()` for the matched string
+* `\d` is a numeric digit.
+
+##Further regular expressions
+It is possible to group parts of the regular expession so that when the *match object* is returned in `mo.group`, these individual components can be extracted as (for example) `mo.group[1]`
+
+Parenthese have a special meaning in regular expresssion - they mark out where the group begins and ends. If you want to find parentheses you have to use the backslash to begin. 
+
+`|` is the *pipe character. This can be used to match one of several expressions. For example, `batReg = re.compile(r'Bat(man|mobile|copter|bat)')`
+
+##Syntax for number of groups
+The following are useful
+* `?` match the expression zero or one times (ie `Bat(wo)?man` will look for Batman or Batwoman as wo can appear or not)
+* `*` mean match zero or more times. `Bat(wo)*man` will find Batwowowowowman.  
+* `+` this must match at last once.  Now `Bat(wo)+man` will not find Batman. 
+* `{x}` will match exactly x times. 
+* `{x, y}` at least x times at most y. Leaving off one of the values will be taken as either zero or infinity. 
+* Python re do *greedy matches* or the longest match so for (3, 5) it will match the 5 if it is available.  For a non-greedy match, use the `?` after like `{3, 5}?`
+
+
+
