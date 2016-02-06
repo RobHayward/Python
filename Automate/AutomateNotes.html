@@ -72,7 +72,7 @@ img {
 <li><a href="#dictionaries"><span class="toc-section-number">4.1</span> Dictionaries</a></li>
 <li><a href="#data-structures"><span class="toc-section-number">4.2</span> Data structures</a></li>
 </ul></li>
-<li><a href="#strngs"><span class="toc-section-number">5</span> Strngs</a><ul>
+<li><a href="#strings"><span class="toc-section-number">5</span> Strings</a><ul>
 <li><a href="#more-strings"><span class="toc-section-number">5.1</span> More strings</a></li>
 <li><a href="#string-formatting"><span class="toc-section-number">5.2</span> String formatting</a></li>
 </ul></li>
@@ -80,6 +80,9 @@ img {
 <li><a href="#regular-expressions"><span class="toc-section-number">7</span> Regular expressions</a><ul>
 <li><a href="#further-regular-expressions"><span class="toc-section-number">7.1</span> Further regular expressions</a></li>
 <li><a href="#syntax-for-number-of-groups"><span class="toc-section-number">7.2</span> Syntax for number of groups</a></li>
+</ul></li>
+<li><a href="#character-class"><span class="toc-section-number">8</span> Character class</a><ul>
+<li><a href="#find-and-replace"><span class="toc-section-number">8.1</span> Find and replace</a></li>
 </ul></li>
 </ul>
 </div>
@@ -291,8 +294,8 @@ list(eggs.items())</code></pre>
 <p><code>type</code> will determine object type.</p>
 </div>
 </div>
-<div id="strngs" class="section level1">
-<h1><span class="header-section-number">5</span> Strngs</h1>
+<div id="strings" class="section level1">
+<h1><span class="header-section-number">5</span> Strings</h1>
 <p>Need double quote sometimes.</p>
 <pre><code>&quot;That is Alic's hat&quot;</code></pre>
 <p>Escape characters allow the use of otherwise illegal characters. For example,</p>
@@ -422,7 +425,7 @@ Eve's cat has been arrested. &quot;&quot;&quot; </code></pre>
 <div id="regular-expressions" class="section level1">
 <h1><span class="header-section-number">7</span> Regular expressions</h1>
 <p>Allow you to specify a pattern of text. Use the re module.</p>
-<p>There area number of functions that can be used one the <code>re module</code> has been imported</p>
+<p>There area number of functions that can be used once the <code>re module</code> has been imported</p>
 <ul>
 <li><code>re-compile()</code> will creates a reex object</li>
 <li>Use raw strings <code>r'\d</code> so that the backslashes can be used</li>
@@ -438,7 +441,64 @@ Eve's cat has been arrested. &quot;&quot;&quot; </code></pre>
 </div>
 <div id="syntax-for-number-of-groups" class="section level2">
 <h2><span class="header-section-number">7.2</span> Syntax for number of groups</h2>
-<p>The following are useful * <code>?</code> match the expression zero or one times (ie <code>Bat(wo)?man</code> will look for Batman or Batwoman as wo can appear or not) * <code>*</code> mean match zero or more times. <code>Bat(wo)*man</code> will find Batwowowowowman.<br />* <code>+</code> this must match at last once. Now <code>Bat(wo)+man</code> will not find Batman. * <code>{x}</code> will match exactly x times. * <code>{x, y}</code> at least x times at most y. Leaving off one of the values will be taken as either zero or infinity. * Python re do <em>greedy matches</em> or the longest match so for (3, 5) it will match the 5 if it is available. For a non-greedy match, use the <code>?</code> after like <code>{3, 5}?</code></p>
+<p>The following are useful</p>
+<ul>
+<li><code>?</code> match the expression zero or one times (ie <code>Bat(wo)?man</code> will look for Batman or Batwoman as wo can appear or not)</li>
+<li><code>*</code> mean match zero or more times. <code>Bat(wo)*man</code> will find Batwowowowowman.<br /></li>
+<li><code>+</code> this must match at last once. Now <code>Bat(wo)+man</code> will not find Batman.</li>
+<li><code>{x}</code> will match exactly x times.</li>
+<li><code>{x, y}</code> at least x times at most y. Leaving off one of the values will be taken as either zero or infinity.</li>
+<li>Python re do <em>greedy matches</em> or the longest match so for (3, 5) it will match the 5 if it is available. For a non-greedy match, use the <code>?</code> after like <code>{3, 5}?</code></li>
+</ul>
+<p>Further regular expression</p>
+<ul>
+<li><code>search()</code> will find the first object</li>
+<li><code>findall()</code> will find all cases (will return a string if there are zero or one group but a list if there is more than one group). It will return groups of components in a list. If there are three groups it returns a list of tuples.</li>
+</ul>
+</div>
+</div>
+<div id="character-class" class="section level1">
+<h1><span class="header-section-number">8</span> Character class</h1>
+<ul>
+<li><code>\d</code> represents any numeric digit.</li>
+<li><code>\D</code> Any character thta is not a numeric digit.</li>
+<li><code>\w</code> Any letter, numberic digit or the underscore character</li>
+<li><code>\W</code> Any character that is not a letter, a numeric digit or the underscore character.</li>
+<li><code>s</code> Any space, tab or new line character</li>
+<li><code>S</code> Any character that is not a space, tab or new line character</li>
+</ul>
+<p>It is possible to make your own character classes.</p>
+<ul>
+<li>`vowelRegex = re.compile(r’[aeiouAEIOU]‘) # r’(a|e|i|o|u)’</li>
+<li><code>^</code> will do the opposite (it would be the consonants)</li>
+<li><code>^</code> can also mean that the expression must come at the begining</li>
+<li><code>$</code> says that the pattern must come at the end of the string</li>
+<li><code>.</code> stands for any character except newline</li>
+<li><code>.*</code> the dot-start mean it can match anything</li>
+<li>`.<em>’ is </em>greedy*</li>
+<li><code>*?</code> is <em>non-greedy</em>.</li>
+<li><code>.*</code> will match everything except a new line <code>\n</code></li>
+<li>to match a everything (including new line) <code>re.compile(r'.*', re.DOTALL)</code></li>
+<li>Can also use <code>re.IGNORECASE</code> will ignore case (<code>re.I</code> for short)</li>
+</ul>
+<div id="find-and-replace" class="section level2">
+<h2><span class="header-section-number">8.1</span> Find and replace</h2>
+<p>Can use the <code>sub</code> method to substitute.</p>
+<ul>
+<li><code>namesRegex.sub('REDACTED', 'Agent Alices and Agent Bob...')</code></li>
+<li>the sub method will find all the cases</li>
+<li><code>namesRegex = re.complie(r'Agent (\w)\w*')</code> will fine the first letter after agent</li>
+<li><code>namesregex.sub('r'Agent \1****)</code> will replace the name after Agent with the first letter. This is taken from the first group.</li>
+<li>verbose format will allow the regular expression to be set out over a number of line. This allows comments to make the regular expression more readable.</li>
+<li><pre><code>re.compile(r'''
+  (\d\d\d-))|  # area code (without parentheses)
+  (\(d\d\d\d) ) # or area code wtih parens and no dash
+  \d\d\d # first three digits
+  \d\d\d\d 
+  '''# last four digits, 
+  re.VERBOSE)</code></pre></li>
+<li>re.IGNORE | re.DOTALL | re.VERBOSE to use multiple options</li>
+</ul>
 </div>
 </div>
 

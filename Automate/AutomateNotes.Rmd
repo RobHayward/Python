@@ -193,7 +193,7 @@ Look at tic-tac-toe function,
 
 `type` will determine object type. 
 
-# Strngs
+# Strings
 Need double quote sometimes. 
 
 ```
@@ -265,7 +265,7 @@ Function arguments can be specified in the command line.
 #Regular expressions
 Allow you to specify a pattern of text. Use the re module. 
 
-There area number of functions that can be used one the `re module` has been imported
+There area number of functions that can be used once the `re module` has been imported
 
 * `re-compile()` will creates a reex object
 * Use raw strings `r'\d` so that the backslashes can be used
@@ -281,7 +281,9 @@ Parenthese have a special meaning in regular expresssion - they mark out where t
 `|` is the *pipe character. This can be used to match one of several expressions. For example, `batReg = re.compile(r'Bat(man|mobile|copter|bat)')`
 
 ##Syntax for number of groups
+
 The following are useful
+
 * `?` match the expression zero or one times (ie `Bat(wo)?man` will look for Batman or Batwoman as wo can appear or not)
 * `*` mean match zero or more times. `Bat(wo)*man` will find Batwowowowowman.  
 * `+` this must match at last once.  Now `Bat(wo)+man` will not find Batman. 
@@ -289,5 +291,55 @@ The following are useful
 * `{x, y}` at least x times at most y. Leaving off one of the values will be taken as either zero or infinity. 
 * Python re do *greedy matches* or the longest match so for (3, 5) it will match the 5 if it is available.  For a non-greedy match, use the `?` after like `{3, 5}?`
 
+Further regular expression
+
+* `search()` will find the first object
+* `findall()` will find all cases (will return a string if there are zero or one group but a list if there is more than one group).  It will return groups of components in a list.  If there are three groups it returns a list of tuples. 
+
+#Character class
+
+* `\d` represents any numeric digit. 
+* `\D` Any character thta is not a numeric digit. 
+* `\w` Any letter, numberic digit or the underscore character
+* `\W` Any character that is not a letter, a numeric digit or the underscore character.
+* `s` Any space, tab or new line character
+* `S` Any character that is not a space, tab or new line character
+
+It is possible to make your own character classes. 
+
+* `vowelRegex = re.compile(r'[aeiouAEIOU]') # r'(a|e|i|o|u)'
+* `^` will do the opposite (it would be the consonants)
+* `^` can also mean that the expression must come at the begining
+* `$` says that the pattern must come at the end of the string
+* `.` stands for any character except newline
+* `.*` the dot-start mean it can match anything
+* `.*' is *greedy*
+* `*?` is *non-greedy*. 
+* `.*` will match everything except a new line `\n`
+* to match a everything (including new line) `re.compile(r'.*', re.DOTALL)`
+* Can also use `re.IGNORECASE` will ignore case (`re.I` for short)
+
+##Find and replace
+Can use the `sub` method to substitute. 
+
+* `namesRegex.sub('REDACTED', 'Agent Alices and Agent Bob...')`
+* the sub method will find all the cases
+* `namesRegex = re.complie(r'Agent (\w)\w*')` will fine the first letter after agent 
+* `namesregex.sub('r'Agent \1****)` will replace the name after Agent with the first letter. This is taken from the first group. 
+* verbose format will allow the regular expression to be set out over a number of line. This allows comments to make the regular expression more readable. 
+* 
+```
+re.compile(r'''
+      (\d\d\d-))|  # area code (without parentheses)
+      (\(d\d\d\d) ) # or area code wtih parens and no dash
+      \d\d\d # first three digits
+      \d\d\d\d 
+      '''# last four digits, 
+      re.VERBOSE)
+```      
+* re.IGNORE | re.DOTALL | re.VERBOSE to use multiple options    
 
 
+
+
+  
