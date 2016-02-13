@@ -339,6 +339,123 @@ re.compile(r'''
 ```      
 * re.IGNORE | re.DOTALL | re.VERBOSE to use multiple options    
 
+#Working with files and folders
+Root folder is 
+
+* C:\ on Windows
+* / on linux
+
+For python to print `\` there must be a `\` or make it *raw string* with `r`. 
+
+*os module* containts functions 
+
+* `os.path.join()` will join strings together to make a path in the appropriate operating-system method
+* `os.sep` is the appropriate string join. 
+* `os.chdir` will change the working directory
+* `os.path.abspath` will return the absolute path of the file that you give it. Convert relative into absolute
+* `os.path.isabs` tells you wether it is absolute path (Bolean)
+* `os.path.relpath` gives the relative path to some point
+* `os.path.dirname` gives the path to the file
+* `os.path.basename` gives the file name and last folder
+* `os.path.exists` will give a Bolean for existance of path name
+* `os.path.isfile` is it is file
+* `os.path.isdir` is it a path
+* `os.path.getsize` gets size of the file
+* `os.path.listdir` all the folders and files in a directory
+* `os.makedirs` will make specified directories
+
+##Save strings to files
+
+* Use of plain text files. Basic information. 
+* Binary files - excel etc
+
+* ` open('c://dir/file name')`
+Methods include
+* `read()` reads the file
+* `realines()` returns a list of strings
+* `w` argument to write - overwrites an existing file 
+* `a` argument to write - will add to the file
+* add `\n` to create a new line
+* import `shelve` module
+* shelve will create a structure like a python *dictonary*
+* This will create 3 binary files to store the information
+* shelve can return keys and values like a dictionary
+
+## Rename or move files and folders
+`shutil` module has a range of functions that will allow renaming and moving of files and folders. Functions: 
+
+* `shuti.copy(<from>, <to>)`
+* `shuti.copy(<from>, <to>, newname)`  Add a new name. 
+* `shutil.copytree(<from>, <to>)` Now whole directory is copied
+* `shutil.move(<from>, <to>)`
+* `shutil.move(<from>, <to>)`  to renmame, move to the same folder with a new name
+
+##Delete files
+
+* in the `os` module us `os.unlink(<filename)`
+* `os.rmdir` can remove a folder.  This will only work if it empty
+* in the `shutil` use `shutil.rmtree(<foldername>)` to remove the folder.  Must be careful.
+* `send2trash` can be downloaded with pip and will send anything that is deleted to the recycle bin. 
+* `send2trach.send2trach`
+
+##Further directory actions
+
+* `os.walk()` - pass a root folder. This will return a list of three: folder name, folders inside, files inside. 
+
+for example, 
+```
+import os
+for folderName, subFolder, filnames in os.walk('c:\\'):
+  print('The folder is ' + folderName)
+  print('The subfolders in ' + folderName + ' are: ' + str(subfolders))
+  print('The filenames in ' + folderName + ' are: ' + str(filenames))
+  print()
+```
+#Debugging
+Exceptions are raised when there is a mistake.
+
+*`raise Exception('This is an error')`
+
+A error message is called a *traceback*.  It should provide an indication of where the error lies.  The `traceback.format_exc()` function will give a strinig of the error. This is in the `traceback` module.  The error could be sent to an error file and the exception can explain where the informationa about the error is stored. 
+
+* Assertions.  This is a sanity check. Makes sure that there is no an issue
+* `assert(<conditiion>) - something that must be true.  Aims to detect programming error.  For example, one of the trafic lights must be red. 
+
+##Logging
+This is an excellent way to understand what is happening with the programme. The `logging` module makes it easy to create a record of the custom messages that are written. Messages can be displayed on the screen. 
+
+```
+import logging
+loging.basicConfig(level = logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+```
+
+This can be used to find a bug. This code is used to output values of i as it iterates through. This can identify problems. In the factorial programme, it shows that i = 0 and the total product is zero (therefore, need to change i to start from 1). This is similar to print, but provides a time stamp and can be exported to a log file.  Logging can also be turned off with the following.  `logging.disable(loging.CRITICAL)`
+
+There are 5 levels of activity
+
+* logging.debug()
+* logging.info()
+* logging.warning()
+* logging.error()
+* logging.critical()
+
+Critical will disable all the messags.
+
+To write to the file, in `logging.basicConfir`, write the filename to dump the infomration into.
+
+###Debugger
+It will run a single line of code one step at a time. Click on debug and debugger. Use all the information. This will show the value of each variable. There are five buttons that can be used.
+
+* Go - run normally
+* Step - move the debugger one step within the function
+* Over - steps over the function to the next function
+* Out - move to end
+* Quit - ends programme
+
+It is usually not necessary to step into the python code.  
+
+*Breakpoints* can be set to force the debugger to open at a particular point. 
+
 
 
 
