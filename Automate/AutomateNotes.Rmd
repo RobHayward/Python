@@ -456,6 +456,30 @@ It is usually not necessary to step into the python code.
 
 *Breakpoints* can be set to force the debugger to open at a particular point. 
 
+#Web scraping
+This makes use of the `webbrowser` module. 
+
+There is a example in file called `mapit`.  This is combined with a batch file that will call the mapit function and combine this with the address to find the google map
+
+## Download files from the web
+This relies on the third party module `requests`
+
+* `res = request.get('https://automatetheboringstuff.com/files/rj.txt')`
+* `res.status.code()`  will give the code 200 if successful (404 - not found)
+* `len(res.text)` - length of the text
+* `print(res.text[:500])` will print first 500 lines?
+* `res.raise_for_status()` will show an exception if there is a problem.  This will stop the code if there is a problem
+* `playFile = open('RomeoandJuliet.txt, wb)` needs the wb - write binary to ensure that the encoding remains.
+* There is a very good overview of encoding matters at [this link(http://bit.ly/unipain)
+* Request module (more information on [requests web page](https://requests/readthedocs.org/en/latest))
+* The code should be downloaded to the hard drive with the `res.iter.content` method
+
+##Web scrapping
+The request module will download the text that has generated the web site. Html has to be parsed to get the required information. A third-party module *beautiful soup* makes this easy. Use `pip install beautifulsoup4`
+
+`import bs4` will show whether it has been installed successfully. There will be no messages if there are no errors. 
+
+###To scrape price informaton from an Amazon page, 
 
 
 

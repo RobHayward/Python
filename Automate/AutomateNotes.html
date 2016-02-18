@@ -95,6 +95,9 @@ img {
 <li><a href="#debugger"><span class="toc-section-number">10.1.1</span> Debugger</a></li>
 </ul></li>
 </ul></li>
+<li><a href="#web-scraping"><span class="toc-section-number">11</span> Web scraping</a><ul>
+<li><a href="#download-files-from-the-web"><span class="toc-section-number">11.1</span> Download files from the web</a></li>
+</ul></li>
 </ul>
 </div>
 
@@ -628,6 +631,25 @@ loging.basicConfig(level = logging.DEBUG, format='%(asctime)s - %(levelname)s - 
 <p>It is usually not necessary to step into the python code.</p>
 <p><em>Breakpoints</em> can be set to force the debugger to open at a particular point.</p>
 </div>
+</div>
+</div>
+<div id="web-scraping" class="section level1">
+<h1><span class="header-section-number">11</span> Web scraping</h1>
+<p>This makes use of the <code>webbrowser</code> module.</p>
+<p>There is a example in file called <code>mapit</code>. This is combined with a batch file that will call the mapit function and combine this with the address to find the google map</p>
+<div id="download-files-from-the-web" class="section level2">
+<h2><span class="header-section-number">11.1</span> Download files from the web</h2>
+<p>This relies on the third party module <code>requests</code></p>
+<ul>
+<li><code>res = request.get('https://automatetheboringstuff.com/files/rj.txt')</code></li>
+<li><code>res.status.code()</code> will give the code 200 if successful (404 - not found)</li>
+<li><code>len(res.text)</code> - length of the text</li>
+<li><code>print(res.text[:500])</code> will print first 500 lines?</li>
+<li><code>res.raise_for_status()</code> will show an exception if there is a problem. This will stop the code if there is a problem</li>
+<li><code>playFile = open('RomeoandJuliet.txt, wb)</code> needs the wb - write binary to ensure that the encoding remains.</li>
+<li>There is a very good overview of encoding matters at [this link(<a href="http://bit.ly/unipain" class="uri">http://bit.ly/unipain</a>)</li>
+<li>Request module (more information on <a href="https://requests/readthedocs.org/en/latest">requests web page</a>)</li>
+</ul>
 </div>
 </div>
 
