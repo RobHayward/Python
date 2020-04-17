@@ -95,7 +95,7 @@ hello()
 
 Functions aim to remove the need to duplicate. 
 
-* The function will take *arguments* that are specified by the user. They are called *parameters* when they are given in the function. Function calls can be part of expressions because they evaluate to a value returned by the function call. When creating a function with the `def` statement, you can specify what should be returned with the `return` statement. 
+The function will take *arguments* that are specified by the user. They are called *parameters* when they are given in the function. Function calls can be part of expressions because they evaluate to a value returned by the function call. When creating a function with the `def` statement, you can specify what should be returned with the `return` statement. 
 
 `None` is a special value returned by print.  It is a lack of a value. Every function has a return value. `key word arguments` can be added to functions to change the behaviour. 
 
@@ -166,7 +166,7 @@ To add new values to a lit use the `append()` and `insert()` methods. Methods on
 
 A list can be seen as a single character string.  Many of the functions can be used.  While strings can be index but they are immutable (cannot be changed). To change strings, there is a need to create a new string.
 
-Immutable objects (like lists) stand alone and the list themselves just contain references to the list. Therefore, if the list is assigned to another name and a change in made in the list under that name, the list referred to by the original name will also change. Therefore, if a list is used and changed inside a function, this will also change the global value.   Immutable variables like strings and duple do not face this problem. 
+Immutable objects (like lists) stand alone and the list themselves just contain references to the list. Therefore, if the list is assigned to another name and a change in made in the list under that name, the list referred to by the original name will also change. Therefore, if a list is used and changed inside a function, this will also change the global value.   Immutable variables like strings and duples do not face this problem. 
 
 A fundamental change can be made with a `deep copy`.  This is in the book. 
 
@@ -254,7 +254,7 @@ This is
 * `#! python 3` for windows
 * `#! /usr/bin/env python 3` for linux
 
-On windows press `windows key +R` to being up the *run dialog*. Type `cmd` to bring up the command prompt window. 
+On windows press `windows key +R` to bring up the *run dialog*. Type `cmd` to bring up the command prompt window. 
 
 *Batch files* or *Script file*
 
@@ -289,7 +289,7 @@ The following are useful
 * `+` this must match at last once.  Now `Bat(wo)+man` will not find Batman. 
 * `{x}` will match exactly x times. 
 * `{x, y}` at least x times at most y. Leaving off one of the values will be taken as either zero or infinity. 
-* Python re do *greedy matches* or the longest match so for (3, 5) it will match the 5 if it is available.  For a non-greedy match, use the `?` after like `{3, 5}?`
+* Python will effect *greedy matches* or the longest match so for (3, 5) it will match the 5 if it is available.  For a non-greedy match, use the `?` after like `{3, 5}?`
 
 Further regular expression
 
@@ -299,7 +299,7 @@ Further regular expression
 #Character class
 
 * `\d` represents any numeric digit. 
-* `\D` Any character thta is not a numeric digit. 
+* `\D` Any character that is not a numeric digit. 
 * `\w` Any letter, numberic digit or the underscore character
 * `\W` Any character that is not a letter, a numeric digit or the underscore character.
 * `s` Any space, tab or new line character
@@ -324,7 +324,7 @@ Can use the `sub` method to substitute.
 
 * `namesRegex.sub('REDACTED', 'Agent Alices and Agent Bob...')`
 * the sub method will find all the cases
-* `namesRegex = re.complie(r'Agent (\w)\w*')` will fine the first letter after agent 
+* `namesRegex = re.complie(r'Agent (\w)\w*')` will find the first letter after agent 
 * `namesregex.sub('r'Agent \1****)` will replace the name after Agent with the first letter. This is taken from the first group. 
 * verbose format will allow the regular expression to be set out over a number of line. This allows comments to make the regular expression more readable. 
 * 
